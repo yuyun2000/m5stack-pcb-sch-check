@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node \"D:\\\\git\\\\KiCAD-MCP-Server\\\\dist\\\\index.js\" --help)",
+      "Read(//d/git/KiCAD-MCP-Server/**)",
+      "Bash(npm view @modelcontextprotocol/client)",
+      "Bash(npm view @modelcontextprotocol/sdk)",
+      "Bash(claude-code mcp list)",
+      "Bash(claude-code mcp test kicad)",
+      "Bash(node dist/index.js --help)",
+      "Bash(python3 -m pip list)",
+      "Bash(python -m pip list)",
+      "Bash(\"C:\\\\Program Files\\\\KiCad\\\\9.0\\\\bin\\\\kicad-cli.exe\" pcb import --help)",
+      "mcp__kicad__open_project",
+      "mcp__kicad__get_component_list",
+      "mcp__kicad__get_nets_list",
+      "mcp__kicad__search_tools",
+      "mcp__kicad__get_category_tools",
+      "mcp__kicad__execute_tool"
+    ]
+  },
+  "enableAllProjectMcpServers": true
+}
