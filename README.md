@@ -39,13 +39,15 @@ pcb-mcp/
 ### 导出过程
 
 目前的导出流程：
-1. 使用KiCad的Altium导入功能打开SchDoc文件
-2. 手动转换并导出符号库（.kicad_sym）
-3. 手动导出网表文件（.net）
-4. 导入PcbDoc文件到KiCad
-5. 手动导出BOM（.csv）
-6. 手动导出D356格式网表（.d356）
-7. 手动导出Gerber光绘文件（gerber/目录）
+1. 打开 KiCad 原理图编辑器（Eeschema）
+2. File → Import → Non-KiCad Schematic 导入 SchDoc 文件
+3. 手动转换并导出符号库（.kicad_sym）
+4. 手动导出网表文件（.net）
+5. 打开 KiCad PCB编辑器（Pcbnew）
+6. File → Import → Non-KiCad PCB 导入 PcbDoc 文件
+7. 手动导出BOM（.csv）
+8. 手动导出D356格式网表（.d356）
+9. 手动导出Gerber光绘文件（gerber/目录）
 
 ## 文件导出说明
 
@@ -54,13 +56,15 @@ pcb-mcp/
 ### 导出过程
 
 目前的导出流程：
-1. 使用KiCad的Altium导入功能打开SchDoc文件
-2. 手动转换并导出符号库（.kicad_sym）
-3. 手动导出网表文件（.net）
-4. 导入PcbDoc文件到KiCad
-5. 手动导出BOM（.csv）
-6. 手动导出D356格式网表（.d356）
-7. 手动导出Gerber光绘文件（gerber/目录）
+1. 打开 KiCad 原理图编辑器（Eeschema）
+2. File → Import → Non-KiCad Schematic 导入 SchDoc 文件
+3. 手动转换并导出符号库（.kicad_sym）
+4. 手动导出网表文件（.net）
+5. 打开 KiCad PCB编辑器（Pcbnew）
+6. File → Import → Non-KiCad PCB 导入 PcbDoc 文件
+7. 手动导出BOM（.csv）
+8. 手动导出D356格式网表（.d356）
+9. 手动导出Gerber光绘文件（gerber/目录）
 
 ## KiCad CLI 功能说明
 
@@ -105,8 +109,9 @@ kicad-cli 目前不支持导入 Altium Designer 文件
 ```
 Altium .SchDoc / .PcbDoc 导入
     ↓
-只能通过 KiCad GUI 手动操作
-File → Import → Non-KiCad Schematic/PCB
+只能通过 KiCad 单机编辑器手动操作
+- 原理图：Eeschema → File → Import → Non-KiCad Schematic
+- PCB：Pcbnew → File → Import → Non-KiCad PCB
     ↓
 底层由 pcbnew/eeschema 的插件处理
 CLI 未暴露此接口
@@ -153,7 +158,8 @@ board = pcbnew.LoadBoard("file.kicad_pcb")
 Altium 文件
     │
     ▼
-[KiCad GUI] 导入并保存为 .kicad_sch / .kicad_pcb
+[Eeschema] 导入 SchDoc 并保存为 .kicad_sch
+[Pcbnew] 导入 PcbDoc 并保存为 .kicad_pcb
     │
     ▼
 [kicad-cli] 批量导出 Gerber / BOM / Netlist 等

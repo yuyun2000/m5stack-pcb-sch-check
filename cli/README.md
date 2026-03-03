@@ -19,15 +19,20 @@ cli/
 
 ### ✅ 手动导出的文件（KiCad格式）
 
-- **A1-MAIN.kicad_sch**: 通过 KiCad GUI 手动导入 Altium Designer 的 `.SchDoc` 文件后导出的原理图文件
-- **AI_Pyramid_PCB_HDMI_V0.3_20251031.kicad_pcb**: 通过 KiCad GUI 手动导入 Altium Designer 的 `.PcbDoc` 文件后导出的PCB文件
+- **A1-MAIN.kicad_sch**: 通过 KiCad 原理图编辑器（Eeschema）单机版手动导入 Altium Designer 的 `.SchDoc` 文件后导出的原理图文件
+- **AI_Pyramid_PCB_HDMI_V0.3_20251031.kicad_pcb**: 通过 KiCad PCB编辑器（Pcbnew）单机版手动导入 Altium Designer 的 `.PcbDoc` 文件后导出的PCB文件
 
 **导入过程**：
 ```
-1. 打开 KiCad GUI
-2. File → Import → Non-KiCad Schematic/PCB
-3. 选择 Altium Designer 源文件（.SchDoc 或 .PcbDoc）
-4. 完成导入后，保存为 KiCad 格式的文件
+1. 打开 KiCad 原理图编辑器（Eeschema）
+2. File → Import → Non-KiCad Schematic
+3. 选择 Altium Designer 原理图文件（.SchDoc）
+4. 完成导入后，保存为 KiCad 格式的原理图文件（.kicad_sch）
+
+1. 打开 KiCad PCB编辑器（Pcbnew）
+2. File → Import → Non-KiCad PCB
+3. 选择 Altium Designer PCB文件（.PcbDoc）
+4. 完成导入后，保存为 KiCad 格式的PCB文件（.kicad_pcb）
 ```
 
 ### ✅ 自动化导出的文件（output/）
