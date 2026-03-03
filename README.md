@@ -32,23 +32,20 @@ pcb-mcp/
     └── sym-lib-table                      # KiCad库配置文件
 ```
 
-## 项目结构
+## 文件导出说明
 
-```
-pcb-mcp/
-├── .claude/         # 配置文件目录
-├── .mcp.json        # MCP服务器配置文件
-├── README.md        # 项目说明文档
-└── ori/             # 从Altium Designer导入到KiCad后手动导出的文件
-    ├── A1-MAIN.SchDoc                     # Altium Designer原理图源文件
-    ├── AI_Pyramid_PCB_HDMI_V0.3_20251031.PcbDoc  # Altium Designer PCB源文件
-    ├── A1-MAIN-altium-import.kicad_sym    # KiCad符号库（Altium导入后）
-    ├── A1-MAIN.net                        # 原理图网表（KiCad手动导出）
-    ├── AI_Pyramid_PCB_HDMI_V0.3_20251031.csv  # BOM物料清单（KiCad手动导出）
-    ├── AI_Pyramid_PCB_HDMI_V0.3_20251031.d356  # D356格式网表（KiCad手动导出）
-    ├── gerber/                            # Gerber光绘文件（KiCad手动导出）
-    └── sym-lib-table                      # KiCad库配置文件
-```
+**重要说明**：ori目录下的所有非Altium源文件（.kicad_sym、.net、.csv、.d356、gerber/）都是从Altium Designer导入到KiCad软件后，通过**手动操作**导出的。
+
+### 导出过程
+
+目前的导出流程：
+1. 使用KiCad的Altium导入功能打开SchDoc文件
+2. 手动转换并导出符号库（.kicad_sym）
+3. 手动导出网表文件（.net）
+4. 导入PcbDoc文件到KiCad
+5. 手动导出BOM（.csv）
+6. 手动导出D356格式网表（.d356）
+7. 手动导出Gerber光绘文件（gerber/目录）
 
 ## 文件导出说明
 
